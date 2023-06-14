@@ -15,4 +15,5 @@ public interface ClientService {
     Client update(Long clientId, Client request);
     Client updatePlan(Long clientId, Long planId);
     ResponseEntity<?> delete(Long clientId);
+    Client getByUserId(Long userId);
 }

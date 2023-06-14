@@ -55,7 +55,18 @@ public class ClientsController {
     public ClientResource getClientById(@PathVariable Long clientId) {
         return mapper.toResource(clientService.getById(clientId));
     }
-
+    @Operation(summary = "Get Client By User Id", description = "Get Client by User Id", tags = {"Clients"})
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Client returned",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ClientResource.class)
+                    ))
+    })
+    @GetMapping("user/{userId}")
+    public ClientResource getClientByUserId(@PathVariable Long userId) {
+        return mapper.toResource(clientService.getByUserId(userId));
+    }
     @Operation(summary = "Create Client", description = "Create Client", tags = {"Clients"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Client created",
