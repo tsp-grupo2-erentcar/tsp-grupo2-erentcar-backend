@@ -75,7 +75,7 @@ public class  Client implements Serializable {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @OneToMany(
             targetEntity = Rent.class,
-            mappedBy = "car",
+            mappedBy = "client",
             fetch = FetchType.LAZY,
             orphanRemoval = true
     )

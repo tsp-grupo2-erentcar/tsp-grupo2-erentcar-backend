@@ -40,7 +40,10 @@ public class ClientServiceImpl implements ClientService {
     public Client getById(Long clientId) {
         return clientRepository.findById(clientId).orElseThrow(() -> new ResourceNotFoundException(ENTITY, clientId));
     }
-
+    @Override
+    public Client getByUserId(Long userId) {
+        return clientRepository.findByUserId(userId).orElseThrow(() -> new ResourceNotFoundException(ENTITY, userId));
+    }
     @Override
     public Client create(Client request) {
         Set<ConstraintViolation<Client>> violations = validator.validate(request);
