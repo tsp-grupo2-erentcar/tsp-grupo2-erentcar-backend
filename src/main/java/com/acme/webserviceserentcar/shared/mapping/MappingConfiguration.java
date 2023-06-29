@@ -7,6 +7,7 @@ import com.acme.webserviceserentcar.client.mapping.ClientMapper;
 import com.acme.webserviceserentcar.client.mapping.CommentMapper;
 import com.acme.webserviceserentcar.client.mapping.PlanMapper;
 import com.acme.webserviceserentcar.favourite.mapping.FavouriteMapper;
+import com.acme.webserviceserentcar.notification.mapping.NotificationMapper;
 import com.acme.webserviceserentcar.rent.mapping.RentMapper;
 import com.acme.webserviceserentcar.security.mapping.RoleMapper;
 import com.acme.webserviceserentcar.security.mapping.UserMapper;
@@ -53,4 +54,7 @@ public class MappingConfiguration {
 
     @Bean
     public FavouriteMapper favouriteMapper() { return new FavouriteMapper(); }
+
+    @Bean
+    public NotificationMapper notificationMapper() { return new NotificationMapper(); }
 }

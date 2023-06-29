@@ -2,6 +2,7 @@ package com.acme.webserviceserentcar.client.domain.model.entity;
 
 import com.acme.webserviceserentcar.car.domain.model.entity.Car;
 import com.acme.webserviceserentcar.favourite.domain.model.entity.Favourite;
+import com.acme.webserviceserentcar.notification.domain.model.entity.Notification;
 import com.acme.webserviceserentcar.rent.domain.model.entity.Rent;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -71,6 +72,15 @@ public class  Client implements Serializable {
             orphanRemoval = true
     )
     private Set<Favourite> favourites;
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToMany(
+            targetEntity = Notification.class,
+            mappedBy = "client",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private Set<Notification> notifications;
 
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @OneToMany(

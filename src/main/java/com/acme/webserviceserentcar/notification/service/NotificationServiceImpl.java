@@ -4,6 +4,7 @@ import com.acme.webserviceserentcar.car.domain.model.entity.Car;
 import com.acme.webserviceserentcar.car.domain.persistence.CarRepository;
 import com.acme.webserviceserentcar.client.domain.model.entity.Client;
 import com.acme.webserviceserentcar.client.domain.persistence.ClientRepository;
+import com.acme.webserviceserentcar.favourite.domain.model.entity.Favourite;
 import com.acme.webserviceserentcar.notification.domain.model.entity.Notification;
 import com.acme.webserviceserentcar.notification.domain.persistence.NotificationRepository;
 import com.acme.webserviceserentcar.notification.domain.service.NotificationService;
@@ -21,7 +22,7 @@ import java.util.Set;
 
 @Service
 public class NotificationServiceImpl implements NotificationService {
-    private static final String ENTITY = "Favourite";
+    private static final String ENTITY = "Notification";
     private final NotificationRepository notificationRepository;
     private final Validator validator;
     private final CarRepository carRepository;
@@ -42,6 +43,11 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public Page<Notification> getAll(Pageable pageable) {
         return notificationRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Notification> getAllNotificationByClientId(Long clientId, Pageable pageable) {
+        return notificationRepository.findByClientId(clientId,pageable);
     }
 
     /*@Override

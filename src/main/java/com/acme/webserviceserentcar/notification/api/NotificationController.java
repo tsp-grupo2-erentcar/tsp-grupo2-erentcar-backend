@@ -54,22 +54,22 @@ public class NotificationController {
                     ))
     })
     @GetMapping("{notificationId}")
-    public NotificationResource getFavouriteById(@PathVariable Long favouriteId) {
-        return mapper.toResource(notificationService.getById(favouriteId));
+    public NotificationResource getNotficaciontById(@PathVariable Long notificationId) {
+        return mapper.toResource(notificationService.getById(notificationId));
     }
 
-    /*@Operation(summary = "Get All Favourites by Client id", description = "Get All Favourites by Client id", tags = {"Favourites"})
+    @Operation(summary = "Get All Notification by Client id", description = "Get All Notification by Client id", tags = {"Notification"})
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "All Favourites of Client returned",
+            @ApiResponse(responseCode = "200", description = "All Notification of Client returned",
                     content = @Content(
                             mediaType = "application/json",
-                            array = @ArraySchema(schema = @Schema(implementation = FavouriteResource.class))
+                            array = @ArraySchema(schema = @Schema(implementation = NotificationResource.class))
                     ))
     })
     @GetMapping("client/{clientId}")
-    public Page<FavouriteResource> getAllFavouritesByClientId(@PathVariable Long clientId, Pageable pageable) {
-        return favouriteService.getAllFavouritesByClientId(clientId, pageable).map(mapper::toResource);
-    }*/
+    public Page<NotificationResource> getAllNotificationByClientId(@PathVariable Long clientId, Pageable pageable) {
+        return notificationService.getAllNotificationByClientId(clientId, pageable).map(mapper::toResource);
+    }
 
     @Operation(summary = "Create Notification", description = "Create Notification", tags = {"Notification"})
     @ApiResponses(value = {
