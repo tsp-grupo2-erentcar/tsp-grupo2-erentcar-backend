@@ -2,6 +2,7 @@ package com.acme.webserviceserentcar.client.resource;
 
 import com.acme.webserviceserentcar.car.resource.CarResource;
 import com.acme.webserviceserentcar.favourite.resource.FavouriteResource;
+import com.acme.webserviceserentcar.notification.domain.model.entity.Notification;
 import com.acme.webserviceserentcar.rent.resource.RentResource;
 import lombok.*;
 
@@ -27,4 +28,5 @@ public class ClientResource {
     private Set<CarResource> cars;
     private Set<FavouriteResource> favourites;
     private Set<RentResource> rents;
+    private Set<Notification> notifications;
 }

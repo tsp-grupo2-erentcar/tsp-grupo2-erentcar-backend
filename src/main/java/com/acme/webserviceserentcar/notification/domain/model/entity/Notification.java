@@ -35,6 +35,7 @@ public class Notification {
     )
     @JsonIgnore
     private Client client;
+
     @NotNull
     private String message;
 

@@ -14,9 +14,6 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @With
 public class CreateNotificationResource {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @NotNull
     private String message;

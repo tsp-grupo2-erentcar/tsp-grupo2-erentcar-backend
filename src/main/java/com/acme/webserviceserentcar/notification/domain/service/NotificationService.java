@@ -11,7 +11,7 @@ import java.util.List;
 public interface NotificationService {
     List<Notification> getAll();
     Page<Notification> getAll(Pageable pageable);
-
+    Page<Notification> getAllNotificationByClientId(Long clientId, Pageable pageable);
     Notification getById(Long notificationId);
     Notification create(Long clientId, Long carId, Notification request);
     ResponseEntity<?> delete(Long notificationId);
